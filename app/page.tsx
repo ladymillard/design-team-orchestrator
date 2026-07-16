@@ -42,11 +42,11 @@ export default function Home() {
           </div>
           <div className="constellation" aria-label="A Design Director coordinates four temporary specialist agents">
             <div className="orbit orbit-one" aria-hidden="true" /><div className="orbit orbit-two" aria-hidden="true" />
-            <div className="agent director"><span>00</span><b>Design<br/>Director</b></div>
-            <div className="agent visual"><span>01</span><b>Visual</b></div>
-            <div className="agent content"><span>02</span><b>Content</b></div>
-            <div className="agent interaction"><span>03</span><b>Interaction</b></div>
-            <div className="agent access"><span>04</span><b>Accessibility</b></div>
+            <div className="agent director"><b>Design<br/>Director</b></div>
+            <div className="agent visual"><b>Visual</b></div>
+            <div className="agent content"><b>Content</b></div>
+            <div className="agent interaction"><b>Interaction</b></div>
+            <div className="agent access"><b>Accessibility</b></div>
             <p className="constellation-note">TEMPORARY TEAM / ONE BRIEF</p>
           </div>
         </section>
