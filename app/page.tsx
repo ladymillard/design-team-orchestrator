@@ -32,22 +32,13 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="hero section-grid" aria-labelledby="hero-title">
+        <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="status-dot" aria-hidden="true" /> Design, orchestrated</p>
             <h1 id="hero-title">Build a <span>team</span> on demand<i>.</i></h1>
             <p className="lede">Design Team Orchestrator helps Codex assemble the right specialists, explore in parallel, critique the work, and converge on one coherent direction.</p>
             <div className="actions"><a className="button primary" href="#install">Install the skill <span aria-hidden="true">↓</span></a><a className="button ghost" href="#workflow">See how it works</a></div>
             <p className="proof">Small teams. Clear ownership. One synthesized outcome.</p>
-          </div>
-          <div className="constellation" aria-label="A Design Director coordinates four temporary specialist agents">
-            <div className="orbit orbit-one" aria-hidden="true" /><div className="orbit orbit-two" aria-hidden="true" />
-            <div className="agent director"><b>Design<br/>Director</b></div>
-            <div className="agent visual"><b>Visual</b></div>
-            <div className="agent content"><b>Content</b></div>
-            <div className="agent interaction"><b>Interaction</b></div>
-            <div className="agent access"><b>Accessibility</b></div>
-            <p className="constellation-note">TEMPORARY TEAM / ONE BRIEF</p>
           </div>
         </section>
 
