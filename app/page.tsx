@@ -6,11 +6,11 @@ const installCommand = "mkdir -p ~/.codex/skills && cp -R ./design-team-orchestr
 const prompt = "Use $design-team-orchestrator to create a launch-page concept for [your product].";
 
 const workflow = [
-  ["01", "Brief", "Frame the outcome, audience, constraints, and open decisions."],
-  ["02", "Staff", "Choose the smallest specialist team that covers the brief."],
-  ["03", "Explore", "Give each specialist a bounded question and clear ownership."],
-  ["04", "Critique", "Test clarity, accessibility, edge cases, trust, and feasibility."],
-  ["05", "Synthesize", "Resolve the tradeoffs into one coherent direction or artifact."],
+  ["01", "Define the goal", "Agree on what you’re making, who it’s for, and what could limit the work."],
+  ["02", "Build the team", "Choose only the specialists needed to solve the problem."],
+  ["03", "Explore ideas", "Give each specialist one clear question and responsibility."],
+  ["04", "Review the work", "Check that the ideas are clear, accessible, trustworthy, and practical."],
+  ["05", "Choose a direction", "Bring the strongest ideas together into one clear result."],
 ];
 
 function CopyButton({ value, label = "Copy command" }: { value: string; label?: string }) {
@@ -62,7 +62,7 @@ export default function Home() {
         </section>
 
         <section className="workflow" id="workflow" aria-labelledby="workflow-title">
-          <div className="section-head"><p className="eyebrow">The workflow</p><h2 id="workflow-title">Built for divergence—<br/>and disciplined convergence.</h2></div>
+          <div className="section-head"><p className="eyebrow">The workflow</p><h2 id="workflow-title">Explore many ideas.<br/>Choose one clear direction.</h2></div>
           <ol className="workflow-list">{workflow.map(([n,title,body]) => <li key={n}><span>{n}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}</ol>
         </section>
 
