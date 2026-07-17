@@ -62,7 +62,7 @@ export default function Home() {
         </section>
 
         <section className="workflow" id="workflow" aria-labelledby="workflow-title">
-          <div className="section-head"><p className="eyebrow">The workflow</p><h2 id="workflow-title">Explore many ideas.<br/>Choose one clear direction.</h2></div>
+          <div className="section-head"><p className="eyebrow">The workflow</p><h2 id="workflow-title">Design Team Orchestrator helps you build like a professional.</h2></div>
           <ol className="workflow-list">{workflow.map(([n,title,body]) => <li key={n}><span>{n}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}</ol>
         </section>
 
