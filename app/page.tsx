@@ -35,7 +35,7 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="status-dot" aria-hidden="true" /> Design, orchestrated</p>
-            <h1 id="hero-title">Build a <span>team</span> on demand<i>.</i></h1>
+            <h1 id="hero-title">Design Team <span>Orchestrator</span><i>.</i></h1>
             <p className="lede">Design Team Orchestrator helps Codex assemble the right specialists, explore in parallel, critique the work, and converge on one coherent direction.</p>
             <div className="actions"><a className="button primary" href="#install">Install the skill <span aria-hidden="true">↓</span></a><a className="button ghost" href="#workflow">See how it works</a></div>
             <p className="proof">Small teams. Clear ownership. One synthesized outcome.</p>
