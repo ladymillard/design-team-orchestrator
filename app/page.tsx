@@ -54,7 +54,7 @@ export default function Home() {
         <section className="install" id="install" aria-labelledby="install-title">
           <div className="install-intro"><p className="eyebrow dark">Install / 3 steps</p><h2 id="install-title">Add the skill.<br/>Open the room.</h2><p>Skills are local folders Codex can read. Keep the complete folder together, including its references.</p></div>
           <ol className="steps">
-            <li><span>01</span><div><h3>Get the skill folder</h3><p>Download or copy <code>design-team-orchestrator</code>. It should contain <code>SKILL.md</code> and <code>references/roles.md</code>.</p></div></li>
+            <li><span>01</span><div><h3>Get the skill folder</h3><p>Download the complete <code>design-team-orchestrator</code> folder, including <code>SKILL.md</code>, its role references, and Codex metadata.</p><a className="download-skill" href="/downloads/design-team-orchestrator.zip" download>Download skill folder <span aria-hidden="true">↓</span><small>ZIP · ready to install</small></a></div></li>
             <li><span>02</span><div><h3>Place it in your skills directory</h3><p>With the skill folder in your current directory, run:</p><div className="codeblock"><code>{installCommand}</code><CopyButton value={installCommand}/></div><p className="path">Final location: ~/.codex/skills/design-team-orchestrator/SKILL.md</p></div></li>
             <li><span>03</span><div><h3>Start a new Codex turn</h3><p>Ask Codex to use the skill for a product, UX, UI, brand, service, content, or design-system brief.</p><div className="try"><small>TRY IT</small><code>{prompt}</code><CopyButton value={prompt} label="Copy prompt"/></div></div></li>
           </ol>
