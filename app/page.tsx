@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const installCommand = "mkdir -p ~/.codex/skills && cp -R ./design-team-orchestrator ~/.codex/skills/";
 const prompt = "Use $design-team-orchestrator to create a launch-page concept for [your product].";
+const repositoryUrl = "https://git.chatgpt-team.site/0acc9b8e-8c36-44ec-ab75-ce58801b51de/appgprj_6a59619892508191ae148ab7ba9e2514";
 
 const workflow = [
   ["01", "Define the goal", "Agree on what you’re making, who it’s for, and what could limit the work."],
@@ -28,7 +29,7 @@ export default function Home() {
     <div className="site-shell">
       <header className="topbar">
         <a className="wordmark" href="#top" aria-label="Design Team Orchestrator home"><span>DESIGN</span><span>TEAM</span><span>ORCHESTRATOR</span></a>
-        <nav aria-label="Primary navigation"><a href="#install">Install</a><a href="#workflow">How it works</a><a className="nav-cta" href="#install">Start <span aria-hidden="true">↘</span></a></nav>
+        <nav aria-label="Primary navigation"><a href="#install">Install</a><a href="#workflow">How it works</a><a href={repositoryUrl} target="_blank" rel="noreferrer">Git <span aria-hidden="true">↗</span></a><a className="nav-cta" href="#install">Start <span aria-hidden="true">↘</span></a></nav>
       </header>
 
       <main id="top">
@@ -73,7 +74,7 @@ export default function Home() {
 
         <section className="closing"><p className="eyebrow">The next practice</p><h2>The future of design work is a team that forms around the problem.</h2><p>Install the skill, bring a real brief, and let Codex assemble the perspectives it needs.</p><a className="button primary" href="#install">Install Design Team Orchestrator <span aria-hidden="true">↑</span></a></section>
       </main>
-      <footer><span>Design Team Orchestrator</span><span>A local Codex skill / 2026</span></footer>
+      <footer><span>Design Team Orchestrator</span><a href={repositoryUrl} target="_blank" rel="noreferrer">View project Git <span aria-hidden="true">↗</span></a><span>A local Codex skill / 2026</span></footer>
     </div>
   );
 }
