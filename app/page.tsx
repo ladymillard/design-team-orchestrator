@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { commandHelp, parseTeamCommand, type DispatchPlan } from "./team-command";
 
 const installCommand = "mkdir -p ~/.codex/skills && cp -R ./design-team-orchestrator ~/.codex/skills/";
 const prompt = "Use $design-team-orchestrator to create a launch-page concept for [your product].";
@@ -25,6 +26,13 @@ function CopyButton({ value, label = "Copy command" }: { value: string; label?: 
 }
 
 export default function Home() {
+  const [command, setCommand] = useState("/team build\nCreate an accessible AI research assistant for family historians.");
+  const [result, setResult] = useState<{ plan?: DispatchPlan; error?: string }>({});
+  function runCommand(event: React.FormEvent) {
+    event.preventDefault();
+    const parsed = parseTeamCommand(command);
+    setResult(parsed.ok ? { plan: parsed.plan } : { error: parsed.error });
+  }
   return (
     <div className="site-shell">
       <header className="topbar">
@@ -41,6 +49,18 @@ export default function Home() {
             <div className="actions"><a className="button primary" href="#install">Install the skill <span aria-hidden="true">↓</span></a><a className="button ghost" href="#workflow">See how it works</a></div>
             <p className="proof">Small teams. Clear ownership. One synthesized outcome.</p>
           </div>
+        </section>
+
+        <section className="command-center" id="commands" aria-labelledby="commands-title">
+          <div className="section-head"><p className="eyebrow">Command center</p><h2 id="commands-title">Choose the team.<br/>Give it the brief.</h2></div>
+          <form className="command-form" onSubmit={runCommand}>
+            <label htmlFor="team-command">Command on the first line, project brief below it</label>
+            <textarea id="team-command" value={command} onChange={(event) => setCommand(event.target.value)} rows={5} spellCheck="false" />
+            <div className="command-actions"><button className="button primary" type="submit">Run command <span aria-hidden="true">→</span></button><button className="help-button" type="button" onClick={() => setResult({ error: `Commands: ${commandHelp.join(", ")}` })}>Show help</button></div>
+          </form>
+          {result.error && <p className="command-error" role="alert">{result.error}</p>}
+          {result.plan && <section className="dispatch" aria-live="polite"><div><p className="eyebrow">Ready to dispatch</p><h3>{result.plan.label}</h3><p>{result.plan.brief}</p></div><ol>{result.plan.agents.map((agent) => <li key={agent.id}><span>{agent.id}</span><small>Tier {agent.tier}{agent.gate ? " · release gate" : ""}</small></li>)}</ol></section>}
+          <p className="command-examples"><b>Examples</b> <code>/team build</code> <code>/team gate</code> <code>/team viability</code> <code>/agent security-privacy</code> <code>/full-team</code></p>
         </section>
 
         <section className="benefits" aria-labelledby="benefits-title">
