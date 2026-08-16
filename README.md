@@ -1,4 +1,13 @@
-# vinext-starter
+# Design Team Orchestrator
+
+Select a configured specialist team or individual agent from the app command center. Put the command on the first line and the shared project brief below it:
+
+```text
+/team build
+Create an accessible AI research assistant for family historians.
+```
+
+Supported selectors are `/team <frame|build|viability|gate|integrate|amplify>`, `/agent <agent-id>`, `/full-team`, and `/help`. Team and agent membership is read from `agents/team.config.json`; the command parser does not maintain a second hard-coded roster.
 
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
