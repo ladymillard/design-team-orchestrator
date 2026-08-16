@@ -1,0 +1,31 @@
+{
+  "name": "Tiered Product Agent Team",
+  "version": "1.0.0",
+  "orchestrator": "executive-team-orchestrator",
+  "responseContract": ["status", "summary", "assumptions", "decisions", "deliverables", "dependencies", "risks", "open_questions", "gate", "next_action"],
+  "agents": [
+    {"id":"agent-architecture-engineering","tier":1,"gate":true},
+    {"id":"persona-behavior-design","tier":1,"gate":false},
+    {"id":"applied-research","tier":1,"gate":false},
+    {"id":"data-model-operations","tier":1,"gate":true},
+    {"id":"quality-evaluation-benchmarking","tier":1,"gate":true},
+    {"id":"safety-alignment-red-team","tier":1,"gate":true},
+    {"id":"security-privacy","tier":1,"gate":true},
+    {"id":"legal-ip-regulatory","tier":1,"gate":true},
+    {"id":"go-to-market-partnerships","tier":1,"gate":false},
+    {"id":"design","tier":2,"gate":false},
+    {"id":"finance","tier":2,"gate":false},
+    {"id":"platform-infrastructure","tier":2,"gate":true},
+    {"id":"product-management","tier":2,"gate":false},
+    {"id":"program-operations-pmo","tier":2,"gate":false},
+    {"id":"marketing-brand","tier":3,"gate":false}
+  ],
+  "phases": [
+    {"id":"frame","agents":["product-management","applied-research"]},
+    {"id":"build","agents":["agent-architecture-engineering","persona-behavior-design","data-model-operations","design","platform-infrastructure"]},
+    {"id":"viability","agents":["finance","go-to-market-partnerships"]},
+    {"id":"gate","agents":["security-privacy","safety-alignment-red-team","legal-ip-regulatory","quality-evaluation-benchmarking"]},
+    {"id":"integrate","agents":["product-management","program-operations-pmo"]},
+    {"id":"amplify","agents":["marketing-brand"]}
+  ]
+}
